@@ -1,0 +1,10 @@
+- name: ensure user is present
+  hosts:  all
+  tasks:
+    - win_user:
+        name: "{{ logon }}"
+        password: "{{ password }}"
+        state: present
+        groups-action: add
+        groups:
+          - Domain Users

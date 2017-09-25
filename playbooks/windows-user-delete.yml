@@ -1,0 +1,6 @@
+- name: ensure user is absent
+  hosts: all
+  tasks:
+    - win_user:
+        name: "{{ logon }}"
+        state: absent

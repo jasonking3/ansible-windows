@@ -1,0 +1,7 @@
+- name: get user info
+  hosts: all
+  tasks:
+    - win_shell:
+        Get-ADUser -Filter {SamAccountName -like "{{ logon }}"}
+      register: results
+    - debug: var=results.stdout_lines
