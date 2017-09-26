@@ -8,3 +8,7 @@
         groups-action: add
         groups:
           - Domain Users
+          - cloud-users
+          - rdp-users
+          - login-users
+          
