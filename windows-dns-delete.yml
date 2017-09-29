@@ -1,0 +1,4 @@
+- name: ensure dns entry is absent
+  hosts:  all
+  tasks:
+    - win_shell: Remove-DnsServerResourceRecord -Force -ZoneName "{{ domain }}" -RRType "A" -Name "{{ name }}" -RecordData "{{ ip }}"

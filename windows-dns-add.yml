@@ -1,0 +1,4 @@
+- name: ensure dns entry is present
+  hosts:  all
+  tasks:
+    - win_shell: Add-DnsServerResourceRecordA -Name "{{ name }}" -ZoneName "{{ domain }}" -AllowUpdateAny -IPv4Address "{{ ip }}"
