@@ -1,0 +1,4 @@
+- name: list all DNS entries
+  hosts:  all
+  tasks:
+    - win_shell: Get-DnsServerResourceRecord -ZoneName "{{ domain }}"
