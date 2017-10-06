@@ -5,7 +5,7 @@
         name: "{{ logon }}"
         state: query
       register: user_info
-      failed_when: user_info != "present"
+      failed_when: user_info.state != "present"
     - win_user:
         name: "{{ logon }}"
         state: absent
