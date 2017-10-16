@@ -1,0 +1,9 @@
+- name: disable user account
+  hosts:  all
+  tasks:
+    - win_user:
+        name: "{{ logon }}"
+        state: query
+      register: user_info
+      failed_when: user_info.state  != "present"
+    - win_shell: Disable-ADAccount -Identity "{{ logon }}"
